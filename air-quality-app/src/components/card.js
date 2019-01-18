@@ -14,7 +14,6 @@ class Card extends Component{
             hours: Math.floor(timeElapsed/60/60),
             days: Math.floor(timeElapsed/60/60/24),
             weeks: Math.floor(timeElapsed/60/60/24/7)
-            
           }
         if (difference.weeks > 0){
             return 'Updated ' + difference.weeks + (difference.weeks>1?' weeks ago':' week ago')

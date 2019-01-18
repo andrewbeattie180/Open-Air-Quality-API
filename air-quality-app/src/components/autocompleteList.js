@@ -6,6 +6,7 @@ class AutocompleteList extends Component{
         e.preventDefault();
         this.props.handleClick(e.currentTarget.innerText)
     }
+ 
     render() {
         const list = this.props.list;
         const inputText = this.props.inputText;

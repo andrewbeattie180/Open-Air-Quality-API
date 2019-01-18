@@ -46,10 +46,12 @@ class App extends Component {
   capitaliseString = (input)=>{
     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
   }
+
   handleClick = (text)=>{
     this.setState({
       inputText:text
-    })
+    },()=>{this.handleSubmit();
+    });
   }
 
   handleTextChange = (input)=>{
@@ -59,9 +61,9 @@ class App extends Component {
   }
 
   handleSubmit=()=>{
-    this.setState(prevState=>({
+    this.setState({
       loading:true,
-      inputText: prevState.inputText.charAt(0).toUpperCase()+prevState.inputText.slice(1)})
+      }
     )
     API.citySearch(this.state.inputText)
       .then(data=>{
