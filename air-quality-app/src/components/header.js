@@ -18,8 +18,8 @@ class Header extends Component {
     return <header className="App-header">
             <div className ='content'>
                 <h1>Compare your Air</h1>
-                <p>Compare the air quality between cities in the UK</p>
-                <p>Select cities to compare using the search tool below</p>
+                <p>Compare the air quality between cities in the UK.</p>
+                <p>Select cities to compare using the search tool below.</p>
                 <SearchForm 
                 list = {this.props.list}
                 handleChange = {this.handleTextChange}

@@ -8,12 +8,17 @@ class Card extends Component{
     handleTimeCalculation = (timeString)=>{
         let oldTime = new Date(timeString);
         let currentTime = new Date();
+        let timeElapsed = (currentTime.getTime()-oldTime.getTime())/1000;
         let difference = {
-            mins: currentTime.getMinutes()-oldTime.getMinutes(),
-            hours: currentTime.getHours()-oldTime.getHours(),
-            days: currentTime.getDay()-oldTime.getDay()
+            mins: Math.floor(timeElapsed/60),
+            hours: Math.floor(timeElapsed/60/60),
+            days: Math.floor(timeElapsed/60/60/24),
+            weeks: Math.floor(timeElapsed/60/60/24/7)
+            
           }
-        if (difference.days > 0){
+        if (difference.weeks > 0){
+            return 'Updated ' + difference.weeks + (difference.weeks>1?' weeks ago':' week ago')
+        } else if (difference.days > 0){
             return 'Updated ' + difference.days + (difference.days>1?' days ago':' day ago')
         } else if (difference.hours > 0){
             return 'Updated ' + difference.hours + (difference.hours>1?' hours ago':' hour ago')
