@@ -26,7 +26,7 @@ class Card extends Component{
         }
     }
     render(){
-        const measurementArray = this.props.data.map(measurement=>([" "+measurement.parameter.toUpperCase() +" = ", " "+measurement.value]));
+        const measurementArray = this.props.data.map(measurement=>([" "+measurement.parameter.toUpperCase() +" = ", " "+measurement.value, measurement.unit ]));
         const time = this.props.data[0].lastUpdated;
 
         return (
