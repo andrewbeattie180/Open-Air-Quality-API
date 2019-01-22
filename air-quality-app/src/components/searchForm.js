@@ -21,7 +21,6 @@ class SearchForm extends Component {
     render (){
         
         return <div className = 'search-holder'>
-        
         <form 
             className="form" 
             id="citySearchBox"
